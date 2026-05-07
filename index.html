@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<title>QA & Corrections Resources</title>
+
+<style>
+body {
+font-family: Tahoma, sans-serif;
+font-size: 15px;
+}
+
+h1 {
+text-align: center;
+color:white;
+-webkit-text-stroke: 1px black;
+background-image: url("https://brightspotcdn.byu.edu/dims4/default/a7c100e/2147483647/strip/true/crop/1200x675+0+2/resize/1200x675!/quality/90/?url=https%3A%2F%2Fbrigham-young-brightspot-us-east-2.s3.us-east-2.amazonaws.com%2Fc6%2F37%2Fd653b9f8433c98325633085023b4%2F1905-41-2.jpg");
+background-size: cover;
+background-repeat: no-repeat;
+background-position: center 40%;
+padding: 30px;
+margin: 20px;
+border: 6px solid transparent;
+border-image: linear-gradient(45deg, #AED2E8, black, #AED2E8) 1;
+position: sticky;
+top: 10px;
+z-index: 1000;
+}
+
+h2 {
+color: black;
+text-align:center;
+padding: 5px;
+margin: 3px;
+background-color: lightgray;
+}
+
+.featured-section {
+  background-color: #0351a1;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 10px;
+}
+
+.featured-section p {
+  color: white;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 50px;
+}
+
+.grid a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  background: #f2f2f2;
+  text-decoration: none;
+  color: black;
+  border-radius: 8px;
+  text-align: center;
+  transition: background 0.2s;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.grid a img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+.grid a:hover {
+  background: #cce2ff;
+  color: #0465bf;
+}
+
+.accordion {
+  background-color: #ddd;
+  color:#444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+  transition: 0.4s;
+  border-radius: 8px;
+}
+
+.active, .accordion:hover {
+  background-color: #bbb;
+}
+
+.accordion.active {
+  border-radius: 8px;
+}
+
+.accordion::before {
+  content: "";
+  display: inline-block;
+  width: 46px;
+  height: 38px;
+  margin-right: 10px;
+  vertical-align: middle;
+  image-rendering: pixelated;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  transition: transform 0.3s ease;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 46 38' shape-rendering='crispEdges'%3E%3Crect width='46' height='38' fill='none'/%3E%3Crect x='13' y='6' width='12' height='11' fill='%23D8C3A5'/%3E%3Crect x='11' y='8' width='2' height='6' fill='%23D8C3A5'/%3E%3Crect x='25' y='8' width='2' height='6' fill='%23D8C3A5'/%3E%3Crect x='13' y='3' width='3' height='3' fill='%23D8C3A5'/%3E%3Crect x='22' y='3' width='3' height='3' fill='%23D8C3A5'/%3E%3Crect x='14' y='4' width='1' height='1' fill='%23F4F0EA'/%3E%3Crect x='23' y='4' width='1' height='1' fill='%23F4F0EA'/%3E%3Crect x='14' y='7' width='3' height='2' fill='%23F4F0EA'/%3E%3Crect x='21' y='7' width='3' height='2' fill='%23F4F0EA'/%3E%3Crect x='16' y='10' width='2' height='2' fill='%23111111'/%3E%3Crect x='20' y='10' width='2' height='2' fill='%23111111'/%3E%3Crect x='17' y='12' width='5' height='4' fill='%23F1E3CF'/%3E%3Crect x='18' y='13' width='2' height='1' fill='%23D65151'/%3E%3Crect x='17' y='15' width='5' height='1' fill='%23222222'/%3E%3Crect x='12' y='18' width='16' height='10' fill='%230351a1'/%3E%3Crect x='10' y='19' width='3' height='4' fill='%23FFFFFF'/%3E%3Crect x='27' y='19' width='3' height='4' fill='%23FFFFFF'/%3E%3Crect x='18' y='18' width='4' height='2' fill='%23FFFFFF'/%3E%3Crect x='18' y='22' width='4' height='4' fill='%23FFFFFF'/%3E%3Crect x='9' y='22' width='3' height='5' fill='%23D8C3A5'/%3E%3Crect x='8' y='24' width='2' height='3' fill='%23D8C3A5'/%3E%3Crect x='28' y='21' width='9' height='4' fill='%23D8C3A5'/%3E%3Crect x='37' y='20' width='3' height='6' fill='%230351a1'/%3E%3Crect x='40' y='21' width='4' height='2' fill='%230351a1'/%3E%3Crect x='39' y='23' width='1' height='1' fill='%23F4F0EA'/%3E%3Crect x='41' y='23' width='1' height='1' fill='%23F4F0EA'/%3E%3Crect x='42' y='20' width='1' height='1' fill='%23F4F0EA'/%3E%3C/svg%3E");
+}
+
+.accordion.active::before {
+  transform: rotate(90deg);
+}
+
+.panel {
+  padding: 0 18px;
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+  border-radius: 0 0 12px 12px;
+  margin-bottom: 15px;
+}
+
+.featured-section .panel {
+  background-color: #0351a1;
+}
+
+@media (max-width: 500px) {
+  body {
+    font-size: 14px;
+    margin: 0;
+    padding: 6px;
+  }
+
+  h1 {
+    font-size: 20px;
+    line-height: 1.15;
+    padding: 18px 10px;
+    margin: 8px 0;
+    border-width: 4px;
+    top: 0;
+  }
+
+  h2 {
+    font-size: 14px !important;
+    line-height: 1.3;
+    padding: 8px;
+    margin: 8px 0;
+  }
+
+  .featured-section {
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 8px;
+  }
+
+  p {
+    margin: 10px 0 6px;
+  }
+
+  .accordion {
+    padding: 10px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+  }
+
+  .accordion::before {
+    width: 32px;
+    height: 26px;
+    margin-right: 6px;
+    flex-shrink: 0;
+  }
+
+  .panel {
+    padding: 0 8px;
+    margin-bottom: 10px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .grid a {
+    padding: 10px;
+    min-height: 54px;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 10px;
+    text-align: left;
+  }
+
+  .grid a img {
+    width: 34px;
+    height: 34px;
+    margin-bottom: 0;
+    flex-shrink: 0;
+  }
+}
+
+</style>
+</head>
+
+<body>
+<h1>Quality Assurance & Corrections Resources</h1>
+<h2 style="font-size:18px;"> Welcome! This is the QA page with links to everything you'll need in order to complete corrections and inspections. </h2>
+
+<div class="featured-section">
+
+<p style="font-size:17px;"><b>Canvas Resources</b></p>
+
+<div class="accordion-wrapper">
+<button class="accordion pinned">Canvas Links</button>
+<div class="panel">
+<div class="grid">
+  <a href="https://byuis.instructure.com" target="_blank">
+   <img src="https://staging.svgrepo.com/show/501124/canvas-logo.svg" alt="Canvas Live">
+   Canvas Live
+  </a>
+  <a href="https://byuohs.instructure.com" target="_blank">
+   <img src="https://staging.svgrepo.com/show/501124/canvas-logo.svg" alt="OHS">
+   Online High School (OHS)
+  </a>
+  <a href="https://byu.instructure.com/courses/33279" target="_blank">
+   <img src="https://staging.svgrepo.com/show/501124/canvas-logo.svg" alt="QA Course">
+   QA Course
+  </a>
+  <a href="https://byuistest.instructure.com" target="_blank">
+   <img src="https://staging.svgrepo.com/show/501124/canvas-logo.svg" alt="Canvas Test">
+   Canvas Test
+  </a>
+</div>
+</div>
+</div>
+
+<p style="font-size:17px;"><b>Buzz Resources</b></p>
+
+<div class="accordion-wrapper">
+<button class="accordion pinned">Buzz Links</button>
+<div class="panel">
+<div class="grid">
+  <a href="https://byumastercourses.agilixbuzz.com" target="_blank">
+   <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFuxrpcNzOWeqfbJSfHSSB4z48E66nU8kMBw&s" alt="Buzz Master">
+   Buzz Master
+  </a>
+  <a href="https://byuis.agilixbuzz.com" target="_blank">
+   <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFuxrpcNzOWeqfbJSfHSSB4z48E66nU8kMBw&s" alt="Buzz Live">
+   Buzz Live
+  </a>
+</div>
+</div>
+</div>
+
+</div>
+
+<p style="font-size:17px;"><b>Daily Use</b></p>
+
+<div class="accordion-wrapper">
+<button class="accordion">Common Links</button>
+<div class="panel">
+<div class="grid">
+  <a href="https://byuis.teamwork.com" target="_blank">
+   <img src="https://upload.wikimedia.org/wikipedia/commons/e/e9/Teamwork-icon.jpg" alt="Teamwork">
+   Teamwork
+  </a>
+  <a href="https://byudce.crm.dynamics.com" target="_blank">
+   <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Microsoft_logo.svg/960px-Microsoft_logo.svg.png" alt="CRM">
+   CRM
+  </a>
+  <a href="https://byu.app.box.com/folder/106870862625?s=guxy6x6ys8iwymiq0h1yl66b4nfl4cyx" target="_blank">
+  <img src="https://avatars.slack-edge.com/2019-10-08/789931495607_cc585a2ba3a192a9c371_512.png" alt="Box">
+   Box
+  </a>
+  <a href="https://outlook.office.com/mail" target="_blank">
+   <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Microsoft_Outlook_Icon_%282025%E2%80%93present%29.svg/960px-Microsoft_Outlook_Icon_%282025%E2%80%93present%29.svg.png" alt="Outlook">
+   Outlook
+  </a>
+</div>
+</div>
+</div>
+
+<p style="font-size:17px;"><b>Orion</b></p>
+
+<div class="accordion-wrapper">
+<button class="accordion">Orion Links</button>
+<div class="panel">
+<div class="grid">
+  <a href="https://cereg.byu.edu/o3/user/registration/dashboard" target="_blank">
+   <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Brigham_Young_University_medallion.svg/250px-Brigham_Young_University_medallion.svg.png" alt="Orion Live">
+   Orion Live
+  </a>
+  <a href="https://ceregtest.byu.edu" target="_blank">
+   <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Brigham_Young_University_medallion.svg/250px-Brigham_Young_University_medallion.svg.png" alt="Orion Test">
+   Orion Test
+  </a>
+</div>
+</div>
+</div>
+
+<p style="font-size:17px;"><b>Miscellaneous</b></p>
+
+<div class="accordion-wrapper">
+<button class="accordion">Misc. Links</button>
+<div class="panel">
+<div class="grid">
+  <a href="https://app.safetyculture.com/dashboard" target="_blank">
+   <img src="https://play-lh.googleusercontent.com/Sqel1WnxWNeLsJgnmvxm-w-P87RPVvJwuqYzS8XtuULJEK_QS99BhYZ8X5VMqNWSF-t0" alt="iAuditor">
+   iAuditor
+  </a>
+  <a href="https://byu.hosted.panopto.com/Panopto/Pages/Home.aspx" target="_blank">
+   <img src="https://avatars.githubusercontent.com/u/799180?s=280&v=4" alt="Panopto">
+   Panopto
+  </a>
+  <a href="http://byu.h5p.com/content" target="_blank">
+   <img src="https://ets-educ.sites.olt.ubc.ca/files/2022/07/H5P.png" alt="h5p">
+   h5p
+  </a>
+  </div>
+</div>
+</div>
+
+<script>
+var acc = document.getElementsByClassName("accordion");
+
+for (let i = 0; i < acc.length; i++) {
+  let panel = acc[i].nextElementSibling;
+  let wrapper = acc[i].parentElement;
+  let isPinnedOpen = acc[i].classList.contains("pinned");
+
+  function openPanel() {
+    panel.style.maxHeight = panel.scrollHeight + "px";
+    acc[i].classList.add("active");
+  }
+
+  function closePanel() {
+    panel.style.maxHeight = null;
+    acc[i].classList.remove("active");
+  }
+
+  if (isPinnedOpen) {
+    openPanel();
+  }
+
+  acc[i].addEventListener("click", function() {
+    isPinnedOpen = !isPinnedOpen;
+
+    if (isPinnedOpen) {
+      openPanel();
+    } else {
+      closePanel();
+      acc[i].classList.remove("pinned");
+    }
+  });
+
+  wrapper.addEventListener("mouseenter", function() {
+    openPanel();
+  });
+
+  wrapper.addEventListener("mouseleave", function() {
+    if (!isPinnedOpen) {
+      closePanel();
+    }
+  });
+}
+</script>
+
+</body>
+</html>
