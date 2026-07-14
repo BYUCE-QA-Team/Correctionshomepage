@@ -351,6 +351,8 @@ for (let i = 0; i < acc.length; i++) {
   }
 
   acc[i].addEventListener("click", function() {
+    clearTimeout(closeTimer);
+    
     isPinnedOpen = !isPinnedOpen;
 
     if (isPinnedOpen) {
