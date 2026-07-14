@@ -334,6 +334,7 @@ for (let i = 0; i < acc.length; i++) {
   let panel = acc[i].nextElementSibling;
   let wrapper = acc[i].parentElement;
   let isPinnedOpen = acc[i].classList.contains("pinned");
+  let closeTimer;
 
   function openPanel() {
     panel.style.maxHeight = panel.scrollHeight + "px";
@@ -361,12 +362,15 @@ for (let i = 0; i < acc.length; i++) {
   });
 
   wrapper.addEventListener("mouseenter", function() {
+    clearTimeout(closeTimer);
     openPanel();
   });
 
   wrapper.addEventListener("mouseleave", function() {
     if (!isPinnedOpen) {
+      closeTimer = setTimeout(function() {
       closePanel();
+      }, 1500);
     }
   });
 }
